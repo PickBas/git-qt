@@ -36,3 +36,6 @@ else:unix: LIBS += -L$$PWD/../libgit2/ -lgit2
 
 INCLUDEPATH += $$PWD/../libgit2
 DEPENDPATH += $$PWD/../libgit2
+
+RESOURCES += \
+    pic.qrc
