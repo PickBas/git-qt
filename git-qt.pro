@@ -29,3 +29,10 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libgit2/ -lgit2
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libgit2/ -lgit2
+else:unix: LIBS += -L$$PWD/../libgit2/ -lgit2
+
+INCLUDEPATH += $$PWD/../libgit2
+DEPENDPATH += $$PWD/../libgit2
